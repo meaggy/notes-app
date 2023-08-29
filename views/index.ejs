@@ -1,0 +1,12 @@
+<h1>Reminders</h1>
+<% if (locals.note) { %>
+    <h1> <%-note%> </h1>
+  <% } else { %>
+    <h1> "BLANK"</h1>
+  <%} %>
+
+<form action="/" method="POST">
+    <button class="circle-button">
+        <span class="plus-symbol">+</span>
+    </button>
+</form>

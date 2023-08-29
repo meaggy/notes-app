@@ -1,0 +1,17 @@
+/* Styles for the circle button */
+.circle-button {
+    width: 100px;
+    height: 100px;
+    background-color: #007bff; /* Change this to your desired button color */
+    border-radius: 50%; /* Makes it a circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Styles for the + symbol */
+.plus-symbol {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #fff; /* Change this to your desired symbol color */
+}
