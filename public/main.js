@@ -3,7 +3,7 @@ $(".current-list").on("click", function(){
     // make a get request
     $.get('/append-note', function (response) {
         console.log(response);
-        $('.current-list').html(response);
+        $('.current-list').html(currentList+response);
     });   
 }
 );

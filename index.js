@@ -15,17 +15,11 @@ app.route('/')
   })
 
   app.get('/append-note', (req, res) => {
-    const addNote = '<input type="text" id="textbox" name="name"></input>';
+    const addNote = '<input type="text" class="textbox"></input>';
     res.send(addNote);
   });
-  
-  // .post((req, res) => {
-  //   const data = {
-  //       note:'<input type="text" id="textbox" name="name"></input>'
-  //   };
-  //   res.render('index.ejs', data);
-  // });
-
+  // post -> can post note to groups, i.e. due today due tomorrow 
+  // post -> can post to notes to different lists?
 
   app.listen(port, () => {
     console.log(`Listening on port ${port}`);

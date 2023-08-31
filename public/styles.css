@@ -3,7 +3,7 @@ body {
 }
 
 .current-list {
-    background-color: white;
+    background-color: green;
     height: 900px;
     width: 900px;
 }
