@@ -1,11 +1,10 @@
 $(".current-list").on("click", function(){
-    fetch('/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json', // Set the content type to JSON
-        },
-        body: null, // Convert data to JSON format
-      });
-    alert("hello!");
+    const currentList = $(".current-list").html()
+    // make a get request
+    $.get('/append-note', function (response) {
+        console.log(response);
+        $('.current-list').html(response);
+    });   
 }
 );
+

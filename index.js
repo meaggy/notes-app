@@ -13,12 +13,18 @@ app.route('/')
   .get((req, res) => {
     res.render('index.ejs');
   })
-  .post((req, res) => {
-    const data = {
-        note:'<input type="text" id="textbox" name="name"></input>'
-    };
-    res.render('index.ejs', data);
+
+  app.get('/append-note', (req, res) => {
+    const addNote = '<input type="text" id="textbox" name="name"></input>';
+    res.send(addNote);
   });
+  
+  // .post((req, res) => {
+  //   const data = {
+  //       note:'<input type="text" id="textbox" name="name"></input>'
+  //   };
+  //   res.render('index.ejs', data);
+  // });
 
 
   app.listen(port, () => {
