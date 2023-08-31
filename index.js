@@ -11,13 +11,9 @@ app.use(express.static("public"));
 
 app.route('/')
   .get((req, res) => {
-    // Handle GET request to /example
     res.render('index.ejs');
   })
   .post((req, res) => {
-    // Handle POST request to /example
-    // const postData = req.body; // Access POST data here
-    // res.post('This is a POST request to /example');
     const data = {
         note:'<input type="text" id="textbox" name="name"></input>'
     };

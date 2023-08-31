@@ -1,3 +1,14 @@
+body {
+    background-color: #007bff;
+}
+
+.current-list {
+    background-color: white;
+    height: 900px;
+    width: 900px;
+}
+
+
 /* Styles for the circle button */
 .circle-button {
     width: 100px;

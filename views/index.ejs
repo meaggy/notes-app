@@ -1,12 +1,41 @@
-<h1>Reminders</h1>
-<% if (locals.note) { %>
-    <h1> <%-note%> </h1>
-  <% } else { %>
-    <h1> "BLANK"</h1>
-  <%} %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>   
+    <div> 
+        <h1>Reminders</h1>
+        <div class="current-list">
+            <% if (locals.note) { %>
+                <h1> <%-note%> </h1>
+            <% } else { %>
+                <h1> "BLANK"</h1>
+            <%} %>
+        </div>
 
-<form action="/" method="POST">
-    <button class="circle-button">
-        <span class="plus-symbol">+</span>
-    </button>
-</form>
+        
+
+        <!-- <form action="/" method="POST">
+            <button class="circle-button">
+                <span class="plus-symbol">+</span>
+            </button>
+        </form> -->
+        
+    </div>
+   
+</body>
+<footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="/main.js"></script>
+
+
+</footer>
+</html>
+
+
+
+
