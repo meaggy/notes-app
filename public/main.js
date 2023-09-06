@@ -1,10 +1,12 @@
-$(".current-list").on("click", function(){
-    const currentList = $(".current-list").html()
-    const addNote = '<input type="text" class="textbox"></input>';    
-    // $.get('/append-note', function (response) {
-    //     console.log(response);
-        $('.current-list').html(currentList+addNote);
-    // });   
+$(".creation-area").on("click", function(){
+    const currentList = $(".reminders-list").html();
+    // const currentContent = $(".reminder-box").value;
+    // console.log(currentContent);
+    const addNote = '<div><input type="text" id="current-reminder" class="reminder-box"></input></div>';    
+
+    $('.reminders-list').html(currentList+addNote);
+
+    $('#current-reminder').focus();
 }
 );
 

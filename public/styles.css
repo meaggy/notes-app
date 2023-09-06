@@ -2,9 +2,15 @@ body {
     background-color: #007bff;
 }
 
-.current-list {
-    background-color: green;
+.creation-area{
+    background-color: purple;
     height: 900px;
+    width: 900px;
+}
+
+.reminders-list {
+    background-color: green;
+    height: 200px;
     width: 900px;
 }
 
