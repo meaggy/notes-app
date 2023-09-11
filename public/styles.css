@@ -18,3 +18,16 @@ body {
     font-size: 24px; /* Adjust the size as needed */
     color: #fff; /* Change this to your desired symbol color */
 }
+
+.reminder-item {
+    border-radius: 0;
+    border:none;
+    border-block-end:solid black;
+}
+
+.reminder-item:focus {
+    border-radius: 0;
+    border:none;
+    outline:none;
+    border-block-end:solid red;
+}
