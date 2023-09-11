@@ -1,8 +1,8 @@
 
 // to do: 
-// build vertically
+// 
 // style input box
-// look at code, seperatation of concerns
+// look at code, seperatation of concerns = function to create/add new item (because needs to be added either way)
 // add delete feature with garbage icon
 // add cross out feature
 // style background
@@ -35,18 +35,3 @@ $(".creation-area").on("click", function(){
     };   
 }
 );
-
-    // const currentList = $(".reminders-list").html();
-    // const prevItem = $(".prev-reminder").val();
-    // const addNote = '<div><input type="text" id="prev-reminder" class="reminder-box"></input></div>';    
-    // $('.reminders-list').html(currentList+addNote);
-    // $('#current-reminder').focus();
-
-// Store var to be used in new creation....
-// $("#prev-reminder").change(function(){
-//     console.log("change triggered from obj type: input");
-//     let $this = $(this);
-//     alert( "\nNow: " + $this.val());
-// });
-
-

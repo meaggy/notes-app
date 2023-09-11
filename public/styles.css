@@ -5,13 +5,13 @@ body {
 .creation-area{
     background-color: purple;
     height: 900px;
-    width: 900px;
+    width: 95%;
 }
 
 .reminders-list {
     background-color: green;
-    height: 200px;
-    width: 900px;
+    height: max-content;
+    width: 95%;
 }
 
 .plus-symbol {
@@ -20,6 +20,7 @@ body {
 }
 
 .reminder-item {
+    width:100%;
     border-radius: 0;
     border:none;
     border-block-end:solid black;
