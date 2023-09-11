@@ -9,13 +9,12 @@
 <body>   
     <div> 
         <h1>Reminders</h1>
-      <div class="reminders-list"></div>
+      <div class="reminders-list">
+        <!-- need to start with one -->
+        <div><input type="text" id="prev-reminder" class="reminder-box"></input></div>
+      </div>
         <div class="creation-area">
-            <% if (locals.addNote) { %>
-                <h1> <%-addNote%> </h1>
-            <% } else { %>
-                <h1> "placeholder for testing"</h1>
-            <%} %>
+            
         </div>
         <!-- <h3>TEST AREA BELOW</h3>
         <p> Are the below overlap?</p>
