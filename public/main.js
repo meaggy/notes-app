@@ -9,6 +9,7 @@
 // fix div on click to create new
 // add button to create new item
 
+
 $(".creation-area").on("click", function(){
     const prevText = $("#prev-reminder").val();  
     const newInput = $("<input>").attr({"type":"text", "id":"prev-reminder", "class":"reminder-item"});

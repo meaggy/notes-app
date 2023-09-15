@@ -1,5 +1,5 @@
 body {
-    background-color: #007bff;
+    background-color: white;
 }
 
 .creation-area{
@@ -9,14 +9,9 @@ body {
 }
 
 .reminders-list {
-    background-color: green;
+    background-color: white;
     height: max-content;
     width: 95%;
-}
-
-.plus-symbol {
-    font-size: 24px; /* Adjust the size as needed */
-    color: #fff; /* Change this to your desired symbol color */
 }
 
 .reminder-item {
@@ -31,4 +26,8 @@ body {
     border:none;
     outline:none;
     border-block-end:solid red;
+}
+
+.delete {
+    color:orange;
 }
