@@ -9,11 +9,26 @@
 // fix div on click to create new
 // add button to create new item
 
+// $('<div/>', {
+//     id: someID,
+//     className: 'foobar',
+//     html: content
+// });
+
+$(document).on("click", ".delete-button", function() {
+    $(this).parent().remove();
+    console.log(this);
+});
+
 
 $(".creation-area").on("click", function(){
     const prevText = $("#prev-reminder").val();  
     const newInput = $("<input>").attr({"type":"text", "id":"prev-reminder", "class":"reminder-item"});
-    const newNote = $("<div>").append(newInput);
+    // const newNote = $("<div>").append(newInput);
+    const newNote = $("<div>", {
+        html: '<input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
+        }
+    );
     let initlized;
     if (typeof prevText === "undefined" || prevText.trim() === "") {
         $('#prev-reminder').focus();
@@ -36,3 +51,5 @@ $(".creation-area").on("click", function(){
     };   
 }
 );
+
+
