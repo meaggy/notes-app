@@ -15,14 +15,44 @@
 //     html: content
 // });
 
+//TODO: length of reminder list here
 $(document).on("click", ".delete-button", function() {
-    $(this).parent().remove();
-    console.log(this);
+    const parentDiv = $(this).parent();    
+    //should be if length of parent is 1 then don't delete, doesnt have to aact be fist
+    if (parentDiv.attr('id') != "inital-note") {
+        console.log("removing");
+        parentDiv.remove();
+    }
+    else {
+        // if length is one of reminder list is 1, keep the input and add the id = prev-reminder
+        console.log("keeping");
+        console.log(parentDiv.children('.reminder-item'));
+        parentDiv.children('.reminder-item').val("");
+        parentDiv.children('.reminder-item').children("input").attr("id", "prev-reminder") ;
+        parentDiv.children('.reminder-item').focus();
+    }; 
+    if (!$("#prev-reminder").length){
+        // zero indexed
+        console.log("previous reminder id does not exist");
+        const mainList = $('.reminders-list div');
+        const mainLen = mainList[mainList.length-1];
+        $(mainLen).children("input").attr("id", "prev-reminder");
+        console.log("previous reminder reassigned");
+
+
+    };
 });
 
+$(document).on("click", ".creation-area", function() {
+    if ($("#prev-reminder").length){
+        console.log("the prev reminder new does exist");
+        console.log("here is the value", $("#prev-reminder").val());
+    };
+    let prevText = $("#prev-reminder").val();  
 
-$(".creation-area").on("click", function(){
-    const prevText = $("#prev-reminder").val();  
+    console.log("reponding to click in creation!!");
+    console.log("pvalue of prev reminder id", $("#prev-reminder").val());
+
     const newInput = $("<input>").attr({"type":"text", "id":"prev-reminder", "class":"reminder-item"});
     // const newNote = $("<div>").append(newInput);
     const newNote = $("<div>", {
