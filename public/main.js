@@ -19,17 +19,18 @@
 $(document).on("click", ".delete-button", function() {
     const parentDiv = $(this).parent();    
     //should be if length of parent is 1 then don't delete, doesnt have to aact be fist
-    if (parentDiv.attr('id') != "inital-note") {
-        console.log("removing");
-        parentDiv.remove();
+    if ($(".reminders-list div").length === 1) {
+          // if length is one of reminder list is 1, keep the input and add the id = prev-reminder
+          console.log("keeping");
+          console.log(parentDiv.children('.reminder-item'));
+          parentDiv.children('.reminder-item').val("");
+          parentDiv.children('.reminder-item').children("input").attr("id", "prev-reminder") ;
+          parentDiv.children('.reminder-item').focus();
     }
     else {
-        // if length is one of reminder list is 1, keep the input and add the id = prev-reminder
-        console.log("keeping");
-        console.log(parentDiv.children('.reminder-item'));
-        parentDiv.children('.reminder-item').val("");
-        parentDiv.children('.reminder-item').children("input").attr("id", "prev-reminder") ;
-        parentDiv.children('.reminder-item').focus();
+        console.log("removing");
+        parentDiv.remove();
+      
     }; 
     if (!$("#prev-reminder").length){
         // zero indexed
