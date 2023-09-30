@@ -28,10 +28,23 @@ body {
     border-block-end:solid red;
 }
 
-.delete {
-    color:orange;
+.delete-button {
+    color:#efefef;
+    background-color: white;
+    border:none;
+    height: 35px;
+    width:35px;
 }
 
 .input-reminder {
     display:inline-block;
+}
+
+.check-radio-button {
+    opacity: 1;
+    -webkit-transition: opacity 1000ms linear;
+    transition: opacity 1000ms linear;
+    border: 0px;
+    height: 20px;
+    width:20px;
 }

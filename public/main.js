@@ -2,20 +2,19 @@
 // to do: 
 // 
 // style input box
-// look at code, seperatation of concerns = function to create/add new item (because needs to be added either way)
-// add delete feature with garbage icon
 // add cross out feature
 // style background
+// look at code, seperatation of concerns = function to create/add new item (because needs to be added either way)
 // fix div on click to create new
 // add button to create new item
 
-// $('<div/>', {
-//     id: someID,
-//     className: 'foobar',
-//     html: content
-// });
+$(document).on("click", ".check-radio-button", function() {
+    const parentDiv = $(this).parent();    
+    console.log(parentDiv.children('.reminder-item'));
+    parentDiv.style.opacity = '0';
+    setTimeout(() => parentDiv.remove(), 1000);
+});
 
-//TODO: length of reminder list here
 $(document).on("click", ".delete-button", function() {
     const parentDiv = $(this).parent();    
     //should be if length of parent is 1 then don't delete, doesnt have to aact be fist
@@ -57,7 +56,7 @@ $(document).on("click", ".creation-area", function() {
     const newInput = $("<input>").attr({"type":"text", "id":"prev-reminder", "class":"reminder-item"});
     // const newNote = $("<div>").append(newInput);
     const newNote = $("<div>", {
-        html: '<input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
+        html: '<input type="radio" class="check-radio-button"></input> <input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
         }
     );
     let initlized;
