@@ -8,11 +8,15 @@
 // fix div on click to create new
 // add button to create new item
 
+// remove need for one reamaining input, can be none
+
 $(document).on("click", ".check-radio-button", function() {
-    const parentDiv = $(this).parent();    
-    console.log(parentDiv.children('.reminder-item'));
-    parentDiv.style.opacity = '0';
-    setTimeout(() => parentDiv.remove(), 1000);
+    const parentDiv = $(this).parent(); 
+    console.log(parentDiv);
+    parentDiv.children('.reminder-item').css({'color':'rgba(0,0,0,0.5)', 'border-color':'rgba(0,0,0,0.5)'});
+    // style.color =  'rgba(0,0,0,0.5)';
+    // parentDiv.children('.reminder-item')[0].style.border.color= 'rgba(0,0,0,0.5)';
+        setTimeout(() => parentDiv.remove(), 1000);
 });
 
 $(document).on("click", ".delete-button", function() {
