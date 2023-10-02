@@ -24,8 +24,7 @@ $(document).on("click", ".check-radio-button", function() {
 });
 
 $(document).on("click", ".delete-button", function() {
-    const parentDiv = $(this).parent();    
-
+    const parentDiv = $(this).parent();  
     parentDiv.remove();
 });
 
