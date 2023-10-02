@@ -1,24 +1,36 @@
-
 // to do: // 
 // style input box
 // style background
 // look at code, seperatation of concerns = function to create/add new item (because needs to be added either way)
 // style button that create new item
+// todo: uncheck radio button...
+// Helpers //
 
 
-function CreateNewNote() {
+// issue with this when there is no prev reminder
+function NetNewNote(){
     const newNote = $("<div>", {
         html: '<input type="radio" class="check-radio-button"></input> <input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
         }
     );
-    $("#prev-reminder").removeAttr("id");
     $('.reminders-list').append(newNote);
     $('#prev-reminder').focus();
-};
+}
 
+function CheckNote() {
+    if ($("#prev-reminder").val().length === 0 ){
+        $('#prev-reminder').focus();
+    }
+    else { 
+        $("#prev-reminder").removeAttr("id");
+        NetNewNote();
+    };
+}
+
+
+// Event Listeners
 $(document).on("click", ".check-radio-button", function() {
     const parentDiv = $(this).parent(); 
-    console.log(parentDiv);
     parentDiv.children('.reminder-item').css({'color':'#efefef', 'border-color':'#efefef'});
     setTimeout(() => parentDiv.remove(), 1000);
 });
@@ -28,47 +40,25 @@ $(document).on("click", ".delete-button", function() {
     parentDiv.remove();
 });
 
-$(document).on("click", ".creation-area", function() {
-    let prevText = $("#prev-reminder").val();  
-    const newNote = $("<div>", {
-        html: '<input type="radio" class="check-radio-button"></input> <input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
-        }
-    );
-    if (!$("#prev-reminder").length){
-        console.log("the prev reminder new does exist");
-        $('.reminders-list').append(newNote);
-        $('#prev-reminder').focus();
-    }
-    else { 
-        if (prevText.trim() === "") {
-            $('#prev-reminder').focus();
-        }
-        else {       
-                $("#prev-reminder").removeAttr("id");
-                $('.reminders-list').append(newNote);
-                $('#prev-reminder').focus();
-            }
-    }});
+// if length of the parent is 0 then net new if not then ccheck note
+
+$(document).on("click", ".creation-area", () => {CreateNewNote()});
+
+$(document).on("click", "#new-reminder-button",() => {CreateNewNote()});
 
 
-$(document).on("click", "#new-reminder", function() {
-    // function:
-    let prevText = $("#prev-reminder").val();  
-    const newNote = $("<div>", {
-        html: '<input type="radio" class="check-radio-button"></input> <input type="text" class="reminder-item" id="prev-reminder"></input> <button class="delete-button"><span class="delete material-symbols-outlined">delete</span></button>'
-        }
-    );
 
-    if (!$("#prev-reminder").length){
-        console.log("the prev reminder new does exist");
-        $('.reminders-list').append(newNote);
-        $('#prev-reminder').focus();
-    }
-    else { 
-        if (prevText.trim() === "") {
-            $('#prev-reminder').focus();
-        }
-    else{
-    console.log("new reminder button clicked");
-    CreateNewNote();}
-}});
+
+// function() {
+//     if (!$("#prev-reminder").length){
+//         CreateNewNote();
+//     }
+//     else { 
+//         let prevText = $("#prev-reminder").val();  
+//         if (prevText.trim() === "") {
+//             $('#prev-reminder').focus();
+//         }
+//         else{
+//         CreateNewNote();
+//     };
+// }});
