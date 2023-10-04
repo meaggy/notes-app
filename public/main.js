@@ -18,12 +18,13 @@ function NetNewNote(){
 }
 
 function CheckNote() {
-    if ($("#prev-reminder").val().length === 0 ){
-        $('#prev-reminder').focus();
-    }
-    else { 
+    const status = document.getElementById("prev-reminder");
+    if ($(".reminders-list div").length === 0 || $("#prev-reminder").val().length > 0){
         $("#prev-reminder").removeAttr("id");
         NetNewNote();
+    }
+    else { 
+        $("#prev-reminder").focus()
     };
 }
 
@@ -42,9 +43,9 @@ $(document).on("click", ".delete-button", function() {
 
 // if length of the parent is 0 then net new if not then ccheck note
 
-$(document).on("click", ".creation-area", () => {CreateNewNote()});
+$(document).on("click", ".creation-area", CheckNote);
 
-$(document).on("click", "#new-reminder-button",() => {CreateNewNote()});
+$(document).on("click", "#new-reminder-button", CheckNote);
 
 
 
